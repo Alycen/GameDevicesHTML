@@ -5,6 +5,7 @@ function Level () {
 	// TargetInfo
 }
 
+// The levels scale will increase when the PLAYER inits the RangeFinder State or Sniper State
 // CheckShotCivilian(Civilian Victim)
 
 Level.prototype.Update = function() {
