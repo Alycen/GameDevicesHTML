@@ -12,7 +12,7 @@ function main() {
 
 	game.initCanvas();
 	game.draw();
-	game.gameLoop
+	game.gameLoop();
 }
 
 Game.prototype.initCanvas = function() {

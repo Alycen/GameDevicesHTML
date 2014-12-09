@@ -7,20 +7,26 @@ function Civilian(xPos, yPos) {
 	this.height = 30;
 	this.isMarked = false;
 	this.isShot = false;
+
+	this.img = new Image();
+	this.img.src = "tempNPC.png";
 	//States - Default, Alert;
+}
+
+Civilian.prototype.Move = function() {
+
 }
 
 // Marked() 
 
 // Shot() 
 
-// Move()
-
 Civilian.prototype.Update = function() {
-	
+	this.Move();
+	this.draw();
 }
 
 Civilian.prototype.draw = function() {
-
+	game.ctx.drawImage(this.img, 0, 0, this.width, this.height);
 }
 
