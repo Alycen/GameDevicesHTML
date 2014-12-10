@@ -3,6 +3,10 @@ function Police () {
 	//Texture
 }
 
+Police.prototype = new Civilian() {
+	
+}
+
 Police.prototype.Timer = function() {
 	
 }
