@@ -1,7 +1,8 @@
 function Level () {
 	// List<Civilian> // includes objects that inherit from Civilian
 	this.scale = 1;
-	// texture
+	this.img = new Image();
+	this.img.src = "";	// Sprite / Image for level
 	// TargetInfo
 }
 
