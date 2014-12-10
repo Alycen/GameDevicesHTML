@@ -107,5 +107,5 @@ Civilian.prototype.setMarked = function(marked) {
 } 
 
 Civilian.prototype.setShot = function(shot) {
-	this.isShot =shot;
+	this.isShot = shot;
 }
