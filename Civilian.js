@@ -10,6 +10,8 @@ function Civilian(xPos, yPos) {
 
 	this.img = new Image();
 	this.img.src = "tempNPC.png";
+	this.markImg = new Image();
+	this.markImg.src = "mark.png";
 	//States - Default, Alert;
 }
 
