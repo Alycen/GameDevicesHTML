@@ -47,10 +47,6 @@ Civilian.prototype.Move = function() {
 	}
 }
 
-// Marked() 
-
-// Shot() 
-
 Civilian.prototype.Update = function() {
 	this.Move();
 	this.Draw();
@@ -84,7 +80,7 @@ Civilian.prototype.Shot = function() {
 }
 
 //Civilian.prototype.getCivSprite() {
-
+//	  ?
 //}
 
 ///////////////////////////////////////////
