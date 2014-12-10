@@ -11,7 +11,7 @@ function main() {
 	console.log("Sniper Sim");
 
 	game.initCanvas();
-	game.draw();
+	game.Draw();
 	game.gameLoop();
 }
 
@@ -31,6 +31,6 @@ Game.prototype.gameLoop = function() {
 	window.requestAnimationFrame(game.gameLoop);
 }
 
-Game.prototype.draw = function() {
+Game.prototype.Draw = function() {
 	
 }

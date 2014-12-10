@@ -16,11 +16,11 @@ function Civilian(xPos, yPos) {
 }
 
 Civilian.prototype.Move = function() {
+	// if statements for each state i.e: if (Normal) move this way, else (Alert) move this way
 	var timer = 30 * 3;	//assuming 30 FPS
-	var UP=0, DOWN=1, LEFT=2, RIGHT=3, STOP=5;
+	var UP=1, DOWN=2, LEFT=3, RIGHT=4, STOP=5;
 	var verticleSpeed=1, horizontalSpeed=2;
-	//random number generator between UP && STOP
-	var dir; //= rand(UP, STOP);
+	var dir = Math.floor(Math.random() * STOP) + UP; 
 
 	for ( ; timer >= 0 ; timer -- ) {
 		if ( timer == 0 ) {
@@ -53,10 +53,10 @@ Civilian.prototype.Move = function() {
 
 Civilian.prototype.Update = function() {
 	this.Move();
-	this.draw();
+	this.Draw();
 }
 
-Civilian.prototype.draw = function() {
+Civilian.prototype.Draw = function() {
 	game.ctx.drawImage(this.img, 0, 0, this.width, this.height);
 }
 
