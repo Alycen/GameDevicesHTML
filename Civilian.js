@@ -60,3 +60,52 @@ Civilian.prototype.draw = function() {
 	game.ctx.drawImage(this.img, 0, 0, this.width, this.height);
 }
 
+///////////////////////////////////////////
+// GET METHODS
+///////////////////////////////////////////
+
+Civilian.prototype.getScale = function() {
+	return this.scale;
+}
+
+Civilian.prototype.getPositionX = function() {
+	return this.x;
+}
+Civilian.prototype.getPositionY = function() {
+	return this.y;
+}
+
+Civilian.prototype.Marked = function() {
+	return this.isMarked;
+}
+
+Civilian.prototype.Shot = function() {
+	return this.isShot;
+}
+
+//Civilian.prototype.getCivSprite() {
+
+//}
+
+///////////////////////////////////////////
+// SET METHODS
+///////////////////////////////////////////
+
+Civilian.prototype.setScale = function(newScale) {
+	this.scale = newScale;
+}
+
+Civilian.prototype.setPositionX = function(newX) {
+	this.x = newX;
+}
+Civilian.prototype.setPositionY = function(newY) {
+	this.y = newY;
+}
+
+Civilian.prototype.setMarked = function(marked) {
+	this.isMarked = marked;
+} 
+
+Civilian.prototype.setShot = function(shot) {
+	this.isShot =shot;
+}
