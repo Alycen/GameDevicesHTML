@@ -1,13 +1,16 @@
 function Police () {
-	//inherits from Civilian
-	//Texture
+	this.img = new Image();
+	this.img.src = "tempPolice.png";
 }
 
-Police.prototype = new Civilian() {
+Police.prototype = new Civilian()
+{
 	
 }
 
 Police.prototype.Timer = function() {
 	
 }
+
+
 

@@ -1,4 +1,6 @@
 var game;
+var civTest;
+var LEVEL_ONE;
 
 function Game() {
 	this.screenWidth = window.innerWidth;
@@ -6,7 +8,9 @@ function Game() {
 }
 
 function main() {
-	game = new SniperSim();
+	game = new Game();
+	civTest = new Civilian(200, 100);
+	LEVEL_ONE = new Level();
 
 	console.log("Sniper Sim");
 
@@ -28,9 +32,12 @@ Game.prototype.initCanvas = function() {
 
 Game.prototype.gameLoop = function() {
 	console.log("gameLoop");
+
+	//LEVEL_ONE.Update();
 	window.requestAnimationFrame(game.gameLoop);
 }
 
 Game.prototype.Draw = function() {
-	
+	LEVEL_ONE.Draw();
+	civTest.Draw();
 }

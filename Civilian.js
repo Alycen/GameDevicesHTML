@@ -3,8 +3,8 @@ function Civilian(xPos, yPos) {
 	this.y = yPos;
 	//texture - not a touch area
 	this.scale = 1;
-	this.width = 23;	//width of tempNPC
-	this.height = 49;	//height of tempNPC
+	this.width = 10;	//width of tempNPC
+	this.height = 25;	//height of tempNPC
 	this.isMarked = false;
 	this.isShot = false;
 
@@ -17,14 +17,15 @@ function Civilian(xPos, yPos) {
 
 Civilian.prototype.Move = function() {
 	// if statements for each state i.e: if (Normal) move this way, else (Alert) move this way
-	var timer = 30 * 3;	//assuming 30 FPS
+	var timer = 30;	//assuming 30 FPS
 	var UP=1, DOWN=2, LEFT=3, RIGHT=4, STOP=5;
 	var verticleSpeed=1, horizontalSpeed=2;
 	var dir = Math.floor(Math.random() * STOP) + UP; 
 
 	for ( ; timer >= 0 ; timer -- ) {
 		if ( timer == 0 ) {
-			timer = 30 * 3;
+			timer = 30;
+			dir = Math.floor(Math.random() * STOP) + UP;
 		}
 
 		if ( dir == UP ) {
@@ -45,6 +46,7 @@ Civilian.prototype.Move = function() {
 			//this.y += 0;
 		}
 	}
+	console.log("Civilian Moving");
 }
 
 Civilian.prototype.Update = function() {
@@ -53,7 +55,8 @@ Civilian.prototype.Update = function() {
 }
 
 Civilian.prototype.Draw = function() {
-	game.ctx.drawImage(this.img, 0, 0, this.width, this.height);
+	game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
+	console.log("Civilian Drawing");
 }
 
 ///////////////////////////////////////////

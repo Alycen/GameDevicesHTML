@@ -2,6 +2,7 @@ function Doppleganger() {
 
 }
 
-Doppleganger.prototype = new Target() {
+Doppleganger.prototype = new Target() 
+{
 	
 }

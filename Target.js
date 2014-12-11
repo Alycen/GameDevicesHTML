@@ -3,6 +3,7 @@ function Target() {
 	// State - Talk, Hide;
 }
 
-Target.prototype = new Civilian() {
+Target.prototype = new Civilian() 
+{
 	
 }

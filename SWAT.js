@@ -2,6 +2,7 @@ function SWAT() {
 
 }
 
-SWAT.prototype = new Police() {
+SWAT.prototype = new Police() 
+{
 	
 }
