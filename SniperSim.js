@@ -1,5 +1,4 @@
 var game;
-var civTest;
 var LEVEL_ONE;
 
 function Game() {
@@ -9,7 +8,6 @@ function Game() {
 
 function main() {
 	game = new Game();
-	civTest = new Civilian(200, 100);
 	LEVEL_ONE = new Level();
 
 	console.log("Sniper Sim");
@@ -33,11 +31,12 @@ Game.prototype.initCanvas = function() {
 Game.prototype.gameLoop = function() {
 	console.log("gameLoop");
 
-	//LEVEL_ONE.Update();
+	LEVEL_ONE.Update();
+	game.Draw();
 	window.requestAnimationFrame(game.gameLoop);
 }
 
 Game.prototype.Draw = function() {
+	this.ctx.clearRect(0,0,this.screenWidth, this.screenHeight);
 	LEVEL_ONE.Draw();
-	civTest.Draw();
 }

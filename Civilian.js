@@ -1,4 +1,12 @@
+var UP=1;
+var DOWN=2;
+var LEFT=3;
+var RIGHT=4;
+var STOP=5;
+
 function Civilian(xPos, yPos) {
+	this.dir = Math.floor(Math.random() * STOP) + UP; 
+	this.timer = 100;
 	this.x = xPos;
 	this.y = yPos;
 	//texture - not a touch area
@@ -17,41 +25,44 @@ function Civilian(xPos, yPos) {
 
 Civilian.prototype.Move = function() {
 	// if statements for each state i.e: if (Normal) move this way, else (Alert) move this way
-	var timer = 30;	//assuming 30 FPS
-	var UP=1, DOWN=2, LEFT=3, RIGHT=4, STOP=5;
-	var verticleSpeed=1, horizontalSpeed=2;
-	var dir = Math.floor(Math.random() * STOP) + UP; 
-
-	for ( ; timer >= 0 ; timer -- ) {
-		if ( timer == 0 ) {
-			timer = 30;
-			dir = Math.floor(Math.random() * STOP) + UP;
-		}
-
-		if ( dir == UP ) {
-			this.y -= verticleSpeed;
-		}
-		else if ( dir == DOWN ) {
-			this.y += verticleSpeed;
-		}
-		else if ( dir == LEFT ) {
-			this.x -= horizontalSpeed;
-		}
-		else if ( dir == RIGHT ) {
-			this.x += horizontalSpeed;
-		}
-		else {	// dir == STOP
-			//do nothing;
-			//this.x += 0;
-			//this.y += 0;
-		}
+	var verticleSpeed= 1, horizontalSpeed= 2;
+	if ( this.timer == 0 ) {
+		this.timer = 100;
+		this.dir = Math.floor(Math.random() * STOP) + UP;
 	}
-	console.log("Civilian Moving");
+
+	if ( this.dir == UP ) {
+		this.y -= verticleSpeed;
+	}
+	else if ( this.dir == DOWN ) {
+		this.y += verticleSpeed;
+	}
+	else if ( this.dir == LEFT ) {
+		this.x -= horizontalSpeed;
+	}
+	else if ( this.dir == RIGHT ) {
+		this.x += horizontalSpeed;
+	}
+	else {}
+	
+	this.timer--;
+	console.log(this.dir);
 }
 
 Civilian.prototype.Update = function() {
 	this.Move();
-	this.Draw();
+	if (this.x < 0 && this.dir == LEFT) {
+		this.dir = RIGHT;
+	}
+	if (this.x > game.screenWidth && this.dir == RIGHT) {
+		this.dir = LEFT;
+	}
+	if (this.y < 0 && this.dir == UP) {
+		this.dir = DOWN;
+	}
+	if ( this.y > game.screenHeight && this.dir == DOWN) {
+		this.dir = UP;
+	}
 }
 
 Civilian.prototype.Draw = function() {
