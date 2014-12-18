@@ -1,6 +1,17 @@
 var game;
 var LEVEL_ONE;
 
+var requestAnimFrame = (function(){
+    return window.requestAnimationFrame       ||
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame    ||
+        window.oRequestAnimationFrame      ||
+        window.msRequestAnimationFrame     ||
+        function(callback){
+            window.setTimeout(callback, 1000 / 60);
+        };
+})();
+
 function Game() {
 	this.screenWidth = window.innerWidth;
 	this.screenHeight = window.innerHeight;
@@ -31,7 +42,7 @@ Game.prototype.gameLoop = function() {
 	
 	LEVEL_ONE.Update();
 	game.Draw();
-	window.requestAnimationFrame(game.gameLoop);
+	window.requestAnimFrame(game.gameLoop);
 }
 
 Game.prototype.Draw = function() {
