@@ -46,7 +46,7 @@ Civilian.prototype.Move = function() {
 	else {}
 	
 	this.timer--;
-	console.log(this.dir);
+	console.log("civ moving");
 }
 
 Civilian.prototype.Update = function() {
@@ -67,7 +67,6 @@ Civilian.prototype.Update = function() {
 
 Civilian.prototype.Draw = function() {
 	game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
-	console.log("Civilian Drawing");
 }
 
 ///////////////////////////////////////////

@@ -35,5 +35,5 @@ Level.prototype.Draw = function() {
 	civ3.Draw();
 	civ4.Draw();
 	civ5.Draw();
-	console.log("Level Drawing");
+	//console.log("Level Drawing");
 }

@@ -4,13 +4,12 @@ var LEVEL_ONE;
 function Game() {
 	this.screenWidth = window.innerWidth;
 	this.screenHeight = window.innerHeight;
+	setInterval(gameLoop, 30000);
 }
 
 function main() {
 	game = new Game();
 	LEVEL_ONE = new Level();
-
-	console.log("Sniper Sim");
 
 	game.initCanvas();
 	game.Draw();
@@ -29,8 +28,7 @@ Game.prototype.initCanvas = function() {
 }
 
 Game.prototype.gameLoop = function() {
-	console.log("gameLoop");
-
+	
 	LEVEL_ONE.Update();
 	game.Draw();
 	window.requestAnimationFrame(game.gameLoop);
